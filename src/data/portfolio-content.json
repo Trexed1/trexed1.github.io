@@ -1,0 +1,171 @@
+{
+  "name": "Tyler Rex",
+  "role": "Computer science student at San Diego State University",
+  "intro": "I'm studying computer science at SDSU, with a focus on cybersecurity and Unix/Linux systems. I'm looking for a Summer 2027 internship where I can keep building practical skills.",
+  "location": "San Diego, CA",
+  "preferredWorkArea": "San Jose and the Bay Area",
+  "currentFocus": "Learning web development while building this portfolio.",
+  "about": [
+    "My interest in cybersecurity grew after joining SDSU's Cyber Defense Team. That led me to Unix/Linux systems administration coursework, defensive security practice, and the Cybersecurity Clinic.",
+    "I enjoy understanding how systems fit together, troubleshooting services, and learning through hands-on labs. This site collects my work as I develop those skills.",
+    "Outside of tech, I enjoy playing volleyball, going to the gym, cars, and video games."
+  ],
+  "contact": {
+    "email": "tylernrex@gmail.com",
+    "phoneDisplay": "408-479-1519",
+    "phoneHref": "tel:+14084791519",
+    "github": "https://github.com/Trexed1",
+    "linkedin": "https://www.linkedin.com/in/tylerrexcs/",
+    "discord": "trexed"
+  },
+  "resume": {
+    "file": "resume.pdf",
+    "label": "Resume PDF"
+  },
+  "education": {
+    "school": "San Diego State University",
+    "degree": "Bachelor of Science in Computer Science",
+    "expectedGraduation": "May 2029",
+    "gpa": "3.82",
+    "minors": "Planned minors in Mathematics and Economics",
+    "coursework": [
+      "Unix/Linux Systems Administration",
+      "Fundamentals of Digital Security and Privacy",
+      "Data Structures and Algorithms",
+      "Computer Organization"
+    ]
+  },
+  "activities": [
+    {
+      "title": "Cyber Defense Team",
+      "organization": "San Diego State University",
+      "date": "Fall 2025 - Present",
+      "status": "Member",
+      "description": "Practice Linux administration, networking, service enumeration, account hardening, log review, and service validation in defensive exercises. Participated in two CCDC invitationals."
+    },
+    {
+      "title": "National Cyber League",
+      "date": "Three sessions",
+      "description": "Participated in individual and team challenges involving networking, cryptography, log analysis, and security troubleshooting."
+    },
+    {
+      "title": "Cybersecurity Clinic",
+      "organization": "San Diego State University",
+      "date": "Fall 2026",
+      "status": "Accepted",
+      "description": "Accepted into the clinic to develop applied cybersecurity skills alongside coursework and Cyber Defense Team activities."
+    }
+  ],
+  "experience": [
+    {
+      "organization": "Target",
+      "role": "Guest Advocate",
+      "date": "May - August 2026",
+      "description": "Worked approximately 20 hours per week across checkout, Drive Up, and Order Pickup. Assisted guests, processed transactions, and coordinated pickup orders with front-end and fulfillment team members."
+    }
+  ],
+  "training": [
+    {
+      "name": "Google Cybersecurity Professional Certificate",
+      "status": "In progress"
+    },
+    {
+      "name": "CompTIA Security+",
+      "status": "Exam preparation in progress"
+    }
+  ],
+  "projects": [
+    {
+      "id": "unix-infrastructure",
+      "name": "Unix/Linux Administration Infrastructure",
+      "kind": "CS 470 coursework",
+      "status": "Academic lab",
+      "summary": "A virtual lab spanning six Unix/Linux operating systems, with network services, authentication, and virtualization.",
+      "technologies": [
+        "OpenBSD",
+        "FreeBSD",
+        "AlmaLinux",
+        "Ubuntu",
+        "OpenIndiana",
+        "AIX",
+        "Docker",
+        "Proxmox"
+      ],
+      "details": [
+        "Built and administered a lab across BSD, Linux, and commercial Unix environments.",
+        "Configured DNS, LDAP authentication, PKI/TLS certificates, SSH, NFS, mail, centralized logging, and Docker-based web services.",
+        "Used Ansible for multi-host configuration, managed backups/restores and migrations in Proxmox, and worked with GitLab and Microsoft Azure."
+      ],
+      "repositoryUrl": null,
+      "liveUrl": null,
+      "image": null
+    },
+    {
+      "id": "portfolio",
+      "name": "Personal Portfolio",
+      "kind": "Personal project",
+      "status": "In progress",
+      "summary": "A portfolio for professional information, technical projects, and future security writeups.",
+      "technologies": [
+        "Astro",
+        "CSS",
+        "Git"
+      ],
+      "details": [
+        "Building a responsive, content-focused site while learning web development and Git.",
+        "Organizing project information and preparing a writing section for future technical notes."
+      ],
+      "repositoryUrl": null,
+      "liveUrl": null,
+      "image": null
+    }
+  ],
+  "skills": {
+    "languages": [
+      "C++",
+      "Java",
+      "Python",
+      "C",
+      "Bash"
+    ],
+    "systems": [
+      "Linux",
+      "OpenBSD",
+      "FreeBSD",
+      "AlmaLinux",
+      "Ubuntu",
+      "OpenIndiana",
+      "AIX",
+      "macOS",
+      "Windows"
+    ],
+    "tools": [
+      "Git",
+      "GitLab",
+      "Docker",
+      "Proxmox",
+      "Microsoft Azure",
+      "Ansible",
+      "Nmap"
+    ],
+    "currentlyLearning": [
+      "Astro",
+      "CSS",
+      "Wireshark",
+      "Active Directory"
+    ]
+  },
+  "writing": [],
+  "editorialNotes": {
+    "source": "User conversation and the newly prepared resume. Do not render this editorialNotes object.",
+    "graduation": "Tyler confirmed expected graduation in May 2029 on October 26, 2026.",
+    "minors": "Keep 'planned' until declared status is confirmed.",
+    "clinic": "No completed client work is claimed.",
+    "ncl": "Three sessions, not a claimed number of seasons or an award.",
+    "projectDates": "CS 470 semester date omitted because earlier records conflict.",
+    "links": "Null project URLs mean no verified URL. Omit those links; never use # as a placeholder.",
+    "writing": "No finished articles supplied. Do not generate fictional posts.",
+    "discord": "Username is trexed. No invite/profile URL has been supplied.",
+    "availability": "Summer 2027 reflects the internship goal in this project."
+  }
+}

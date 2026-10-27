@@ -1,0 +1,45 @@
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="Tyler Rex, back to top">Tyler Rex</a>
+
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#writing">Writing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const links = [...document.querySelectorAll<HTMLAnchorElement>('.site-header nav a')];
+  const header = document.querySelector<HTMLElement>('.site-header');
+  const sections = links
+    .map((link) => document.querySelector<HTMLElement>(link.hash))
+    .filter((section): section is HTMLElement => section !== null);
+
+  function markCurrent(id: string | null) {
+    for (const link of links) {
+      if (link.hash === `#${id}`) {
+        link.setAttribute('aria-current', 'location');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    }
+  }
+
+  function updateCurrent() {
+    const readingLine = (header?.offsetHeight ?? 0) + 64;
+    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+    const current = atBottom
+      ? sections.at(-1)
+      : [...sections].reverse().find((section) => section.getBoundingClientRect().top <= readingLine);
+
+    markCurrent(current?.id ?? null);
+  }
+
+  window.addEventListener('scroll', updateCurrent, { passive: true });
+  window.addEventListener('resize', updateCurrent);
+  updateCurrent();
+</script>

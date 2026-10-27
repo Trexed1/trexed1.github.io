@@ -1,0 +1,35 @@
+---
+interface Props {
+  value: string;
+  label: string;
+}
+
+const { value, label } = Astro.props;
+---
+
+<span class="copy-control">
+  <button type="button" class="copy-button" data-copy={value} hidden>{label}</button>
+  <span class="copy-status" role="status"></span>
+</span>
+
+<script>
+  // Contact text remains available when JavaScript or clipboard access is unavailable.
+  if (navigator.clipboard?.writeText) {
+    document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((button) => {
+      const status = button.parentElement?.querySelector<HTMLElement>('[role="status"]');
+      button.hidden = false;
+
+      button.addEventListener('click', async () => {
+        if (!status) return;
+        status.textContent = '';
+
+        try {
+          await navigator.clipboard.writeText(button.dataset.copy ?? '');
+          status.textContent = 'Copied.';
+        } catch {
+          status.textContent = 'Copy unavailable. Select the contact text to copy it.';
+        }
+      });
+    });
+  }
+</script>
