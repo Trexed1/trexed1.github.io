@@ -1,0 +1,48 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import PortfolioOverview from '../../components/PortfolioOverview.astro';
+import portfolio from '../../data/portfolio-content.json';
+import { sitePath } from '../../lib/paths';
+const clinic = portfolio.activities.find((item) => item.title === 'Cybersecurity Clinic');
+---
+<SiteLayout title="Competitions and Projects" description="Tyler Rex's infrastructure lab, homelab design, and cybersecurity competition participation.">
+  <div class="page-shell page-content">
+    <header class="page-heading">
+      <p class="eyebrow">Portfolio</p>
+      <h1>Competitions and Projects</h1>
+      <p>Infrastructure work, a homelab in the design phase, and competition participation.</p>
+    </header>
+    <section class="page-section" aria-label="Projects and competitions">
+      <PortfolioOverview />
+    </section>
+    <section class="page-section" aria-labelledby="background-heading">
+      <h2 id="background-heading">Background</h2>
+      <details class="background-details">
+        <summary>Education, experience, and training</summary>
+        <div class="background-content">
+          <article>
+            <h3>{portfolio.education.school}</h3>
+            <p>{portfolio.education.degree}</p>
+            <p class="entry-meta">School location: {portfolio.schoolLocation}</p>
+            <p class="entry-meta">Expected {portfolio.education.expectedGraduation} · GPA: {portfolio.education.gpa}</p>
+            <p>{portfolio.education.minors}</p>
+            <p class="muted">Relevant coursework: {portfolio.education.coursework.join('; ')}.</p>
+          </article>
+          {portfolio.experience.map((job) => (
+            <article>
+              <h3>{job.organization}: {job.role}</h3>
+              <p class="entry-meta">{job.date}</p>
+              <p>{job.description}</p>
+            </article>
+          ))}
+          {clinic && <article><h3>{clinic.title}</h3><p class="entry-meta">{clinic.date} · {clinic.status}</p><p>{clinic.description}</p></article>}
+          <article>
+            <h3>Training and exam preparation</h3>
+            <ul class="plain-list">{portfolio.training.map((item) => <li>{item.name}: <span class="muted">{item.status}</span></li>)}</ul>
+          </article>
+          <a class="text-link" href={sitePath(portfolio.resume.file)} download>Download Resume (PDF)</a>
+        </div>
+      </details>
+    </section>
+  </div>
+</SiteLayout>

@@ -1,0 +1,37 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import portfolio from '../../data/portfolio-content.json';
+import { sitePath } from '../../lib/paths';
+const project = portfolio.projects.find((item) => item.id === 'unix-infrastructure')!;
+---
+<SiteLayout title="SDSU Infrastructure Project" description="A multi-system Unix/Linux academic lab covering services, authentication, virtualization, and automation.">
+  <div class="page-shell page-content">
+    <a class="text-link back-link" href={sitePath('portfolio/')}>Back to portfolio</a>
+    <header class="page-heading">
+      <p class="eyebrow">Academic lab</p>
+      <h1>{project.name}</h1>
+      <p>{project.summary}</p>
+    </header>
+    <div class="article-body">
+      <section class="page-section">
+        <h2>Overview</h2>
+        <p>This academic lab brought together BSD, Linux, and commercial Unix environments to practice systems administration.</p>
+      </section>
+      <section class="page-section">
+        <h2>Systems and services</h2>
+        <dl class="technical-list">
+          <div><dt>Environments</dt><dd>{project.systems?.join(', ')}</dd></div>
+          <div><dt>Services</dt><dd>{project.services?.join(', ')}</dd></div>
+        </dl>
+      </section>
+      <section class="page-section">
+        <h2>My work</h2>
+        <ul class="plain-list">{project.details.map((detail) => <li>{detail}</li>)}</ul>
+      </section>
+      <section class="page-section">
+        <h2>Tools</h2>
+        <p>{project.tools?.join(', ')}.</p>
+      </section>
+    </div>
+  </div>
+</SiteLayout>

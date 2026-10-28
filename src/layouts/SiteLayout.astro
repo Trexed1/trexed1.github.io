@@ -1,0 +1,32 @@
+---
+import Header from '../components/Header.astro';
+import portfolio from '../data/portfolio-content.json';
+import { sitePath } from '../lib/paths';
+import '../styles/global.css';
+interface Props { title: string; description: string; noindex?: boolean; }
+const { title, description, noindex = false } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <title>{title === portfolio.name ? title : title + ' | ' + portfolio.name}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header />
+    <main id="main"><slot /></main>
+    <footer class="site-footer">
+      <div class="page-shell footer-inner">
+        <span>{portfolio.name} · Seeking opportunities in {portfolio.preferredWorkArea}</span>
+        <div class="footer-links">
+          <a href={sitePath(portfolio.resume.file)} download>Resume</a>
+          <a href="https://github.com/Trexed1/trexed1.github.io">Site source</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

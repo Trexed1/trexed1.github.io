@@ -1,45 +1,16 @@
 ---
+import { sitePath } from '../lib/paths';
 interface Props {
-  project: {
-    id: string;
-    name: string;
-    kind: string;
-    status: string;
-    summary: string;
-    technologies: string[];
-    details: string[];
-    repositoryUrl: string | null;
-    liveUrl: string | null;
-  };
+  project: { id: string; name: string; kind: string; status: string; summary: string; technologies: string[]; previewTechnologies?: string[]; path?: string; toolsLabel?: string; };
+  headingLevel?: 3 | 4;
 }
-
-const { project } = Astro.props;
-const links = [
-  { label: 'Repository', url: project.repositoryUrl },
-  { label: 'Live project', url: project.liveUrl },
-].filter((link) => link.url && /^https?:\/\//.test(link.url));
+const { project, headingLevel = 3 } = Astro.props;
+const Heading = headingLevel === 4 ? 'h4' : 'h3';
 ---
-
 <article class="project-row" aria-labelledby={project.id + '-title'}>
-  <h3 id={project.id + '-title'}>{project.name}</h3>
-  <p class="entry-meta">{project.kind} · {project.status}</p>
+  <p class="eyebrow">{project.kind}{project.status !== project.kind && ' · ' + project.status}</p>
+  <Heading id={project.id + '-title'}>{project.name}</Heading>
   <p>{project.summary}</p>
-  <p class="technology-list">Tools: {project.technologies.join(', ')}</p>
-
-  <details class="project-details">
-    <summary>
-      <span class="details-closed">Show details</span>
-      <span class="details-open">Hide details</span>
-      <span class="visually-hidden"> for {project.name}</span>
-    </summary>
-    <ul>
-      {project.details.map((detail) => <li>{detail}</li>)}
-    </ul>
-  </details>
-
-  {links.length > 0 && (
-    <ul class="inline-links" aria-label={project.name + ' links'}>
-      {links.map((link) => <li><a class="text-link" href={link.url!}>{link.label}</a></li>)}
-    </ul>
-  )}
+  <p class="entry-meta">{project.toolsLabel ?? 'Tools'}: {(project.previewTechnologies ?? project.technologies).join(', ')}</p>
+  {project.path && <a class="text-link" href={sitePath(project.path)}>View project</a>}
 </article>

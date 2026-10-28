@@ -1,9 +1,9 @@
 {
   "name": "Tyler Rex",
-  "role": "Computer science student at San Diego State University",
-  "intro": "I'm studying computer science at SDSU, with a focus on cybersecurity and Unix/Linux systems. I'm looking for a Summer 2027 internship where I can keep building practical skills.",
-  "location": "San Diego, CA",
-  "preferredWorkArea": "San Jose and the Bay Area",
+  "role": "Computer Science Student at San Diego State University",
+  "intro": "I'm a Computer Science student at San Diego State University, exploring software, systems, and cybersecurity.",
+  "location": null,
+  "preferredWorkArea": "San Jose and nearby areas",
   "currentFocus": "Learning web development while building this portfolio.",
   "about": [
     "My interest in cybersecurity grew after joining SDSU's Cyber Defense Team. That led me to Unix/Linux systems administration coursework, defensive security practice, and the Cybersecurity Clinic.",
@@ -41,7 +41,7 @@
       "organization": "San Diego State University",
       "date": "Fall 2025 - Present",
       "status": "Member",
-      "description": "Practice Linux administration, networking, service enumeration, account hardening, log review, and service validation in defensive exercises. Participated in two CCDC invitationals."
+      "description": "Practice Linux administration, networking, service enumeration, account hardening, log review, and service validation in defensive exercises. Participated in two WRCCDC invitationals."
     },
     {
       "title": "National Cyber League",
@@ -77,10 +77,10 @@
   "projects": [
     {
       "id": "unix-infrastructure",
-      "name": "Unix/Linux Administration Infrastructure",
-      "kind": "CS 470 coursework",
+      "name": "SDSU Infrastructure Project",
+      "kind": "Academic lab",
       "status": "Academic lab",
-      "summary": "A virtual lab spanning six Unix/Linux operating systems, with network services, authentication, and virtualization.",
+      "summary": "A multi-system Unix/Linux lab covering network services, authentication, virtualization, and automation.",
       "technologies": [
         "OpenBSD",
         "FreeBSD",
@@ -98,7 +98,131 @@
       ],
       "repositoryUrl": null,
       "liveUrl": null,
-      "image": null
+      "image": null,
+      "featured": true,
+      "courseReference": "CS 470 coursework",
+      "path": "portfolio/sdsu-infrastructure/",
+      "previewTechnologies": [
+        "Unix/Linux",
+        "Ansible",
+        "Proxmox",
+        "Docker"
+      ],
+      "systems": [
+        "OpenBSD",
+        "FreeBSD",
+        "AlmaLinux",
+        "Ubuntu",
+        "OpenIndiana",
+        "AIX"
+      ],
+      "services": [
+        "DNS",
+        "LDAP authentication",
+        "PKI/TLS",
+        "SSH",
+        "NFS",
+        "Mail",
+        "Centralized logging",
+        "Docker-based web services"
+      ],
+      "tools": [
+        "Ansible",
+        "Proxmox",
+        "Docker",
+        "GitLab",
+        "Microsoft Azure"
+      ]
+    },
+    {
+      "id": "segmented-homelab",
+      "name": "Segmented Cybersecurity Homelab",
+      "kind": "Personal infrastructure and security project",
+      "status": "Design phase",
+      "summary": "Designing a staged virtual cybersecurity lab on an Apple Silicon Mac to explore networking, identity, applications, monitoring, and incident response.",
+      "technologies": [
+        "UTM",
+        "Ubuntu ARM64",
+        "Linux networking",
+        "nftables",
+        "dnsmasq",
+        "Docker Compose",
+        "Portainer",
+        "LDAP",
+        "TLS",
+        "Git",
+        "Ansible",
+        "Kali",
+        "Metasploit",
+        "DVWA",
+        "Nessus Essentials",
+        "Caldera",
+        "Suricata",
+        "Wazuh",
+        "TheHive",
+        "Cortex"
+      ],
+      "previewTechnologies": [
+        "UTM",
+        "Ubuntu ARM64",
+        "Portainer",
+        "nftables"
+      ],
+      "toolsLabel": "Planned tools",
+      "repositoryUrl": null,
+      "liveUrl": null,
+      "image": null,
+      "featured": true,
+      "path": "portfolio/segmented-cybersecurity-homelab/",
+      "overview": "I am designing a virtual cybersecurity lab on an Apple Silicon Mac to learn how networking, identity, applications, monitoring, and incident response work together. Four private networks will separate management, services, security tools, and intentionally vulnerable targets. I will build and test each part in stages so the environment remains practical on a 24 GB Mac.",
+      "sections": [
+        {
+          "title": "Virtualization and networking",
+          "body": "UTM will host ARM64 virtual machines. An Ubuntu router will provide DHCP, DNS, routing, NAT, and nftables firewall rules between the four networks. I will verify allowed and blocked connections with packet captures and firewall counters. A separate 802.1Q exercise will demonstrate VLAN tags, access ports, and trunks."
+        },
+        {
+          "title": "Services and identity",
+          "body": "An Ubuntu services VM will run Docker Compose applications, with Portainer for container management. Planned services include SSH, local DNS names, an internal HTTPS site, a private certificate authority, and LDAP users and groups. Short exercises will add internal mail, NFS file sharing, and a virtual printer. A Samba Active Directory setup and Windows 11 ARM client are possible later additions."
+        },
+        {
+          "title": "Security testing",
+          "body": "An isolated target network will host DVWA and, if compatible, bWAPP and a VulnHub challenge. Kali and Metasploit will test only these lab targets. Nessus Essentials will identify findings that I can check, fix, and rescan. Caldera will generate controlled activity for detection testing."
+        },
+        {
+          "title": "Monitoring and incident response",
+          "body": "Suricata and packet captures will show traffic crossing the router; Zeek is a possible extension. Wazuh will collect host events and alerts. I will investigate selected alerts in TheHive, use Cortex to examine safe observables, document the timeline and evidence, and verify a fix before closing a simulated case."
+        },
+        {
+          "title": "Automation and recovery",
+          "body": "Git will track sanitized diagrams, configurations, scripts, and notes. Shell scripts and Ansible will repeat setup and health checks. I will also introduce safe failures, diagnose them using logs and traffic, restore services from backups, and retest them from another network."
+        },
+        {
+          "title": "Cloud comparison",
+          "body": "I will map this local design to AWS, Azure, and Google Cloud networking, identity, firewall, and logging concepts. Small deployments in each cloud are optional; the core lab runs on the Mac."
+        }
+      ],
+      "possibleExtensions": [
+        "bWAPP",
+        "VulnHub",
+        "Zeek",
+        "Samba Active Directory",
+        "Windows 11 ARM",
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ],
+      "designGoals": [
+        "Network segmentation",
+        "Subnetting and VLANs",
+        "Firewall policy",
+        "Service administration",
+        "Identity and certificates",
+        "Vulnerability validation",
+        "Detection",
+        "Incident response",
+        "Automation",
+        "Backup and restore"
+      ]
     },
     {
       "id": "portfolio",
@@ -117,7 +241,8 @@
       ],
       "repositoryUrl": null,
       "liveUrl": null,
-      "image": null
+      "image": null,
+      "featured": false
     }
   ],
   "skills": {
@@ -150,9 +275,8 @@
     ],
     "currentlyLearning": [
       "Astro",
-      "CSS",
       "Wireshark",
-      "Active Directory"
+      "Portainer"
     ]
   },
   "writing": [],
@@ -164,8 +288,46 @@
     "ncl": "Three sessions, not a claimed number of seasons or an award.",
     "projectDates": "CS 470 semester date omitted because earlier records conflict.",
     "links": "Null project URLs mean no verified URL. Omit those links; never use # as a placeholder.",
-    "writing": "No finished articles supplied. Do not generate fictional posts.",
+    "writing": "Two actual NCL PDFs supplied October 28. No written publication permission; keep files, page images, transcripts, and previews local-only and out of Git/production.",
     "discord": "Username is trexed. No invite/profile URL has been supplied.",
-    "availability": "Summer 2027 reflects the internship goal in this project."
-  }
+    "availability": "Summer 2027 reflects the internship goal in this project.",
+    "location": "San Diego is the school location only, not Tyler's residence. Seek opportunities in San Jose and nearby areas without claiming a current home city."
+  },
+  "aboutFacts": [
+    "Computer Science student at SDSU",
+    "Member, SDSU Cyber Defense Team",
+    "Exploring software, systems, and cybersecurity"
+  ],
+  "interests": "Outside class: volleyball, the gym, cars, and video games.",
+  "now": [
+    "Studying computer science at SDSU",
+    "Practicing with the Cyber Defense Team",
+    "Working through the Google Cybersecurity Professional Certificate",
+    "Preparing for CompTIA Security+"
+  ],
+  "internshipNote": "Open to Summer 2027 internships.",
+  "writingNotice": "I've written two NCL OSINT write-ups, which I can't share publicly.",
+  "schoolLocation": "San Diego, CA",
+  "competitions": [
+    {
+      "id": "ncl",
+      "title": "National Cyber League",
+      "participation": "Three sessions",
+      "description": "Participated in individual and team challenges involving networking, cryptography, log analysis, and security troubleshooting.",
+      "logo": "images/competitions/ncl-logo.png",
+      "website": "https://nationalcyberleague.org/",
+      "logoWidth": 128,
+      "logoHeight": 128
+    },
+    {
+      "id": "wrccdc",
+      "title": "WRCCDC Invitationals",
+      "participation": "Two invitationals",
+      "description": "Participated in two WRCCDC invitational defensive-security exercises with the SDSU Cyber Defense Team.",
+      "logo": "images/competitions/wrccdc-logo.png",
+      "website": "https://wrccdc.org/",
+      "logoWidth": 696,
+      "logoHeight": 417
+    }
+  ]
 }

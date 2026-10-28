@@ -22,15 +22,17 @@ Use the architecture and design in the project brief. Favor plain CSS, semantic 
 
 ## Current design and content milestone
 
-docs/PROJECT_BRIEF.md is the current design reference. Follow all 30 exclusions in its "All 30 design exclusions" section. The graphite/warm-gray/copper palette supersedes earlier sage/green guidance: #1B1D21 background, #24272C optional surface, #E6E3DC text, #B1B0AD muted text, #C98B61 links/focus/active accent, and #45484F dividers. Use Georgia headings/name and Arial body/navigation with local font fallbacks.
+docs/PROJECT_BRIEF.md is canonical. The October 28, 2026 redesign in docs/REDESIGN_BRIEF.md supersedes conflicting older copper/Georgia, one-page-only, icon, rounding, and typing restrictions. Use dark blue/slate/light blue (#0E1520, #151F2E, #1B293A, #EDF2F7, #A9B6C8, #8CBCE8, #33445A) with Arial/Helvetica system fonts. Useful labeled local SVG icons, one brief accessible name-typing effect, 8px controls, and 12px broad panels are authorized. Keep retained exclusions in the current brief.
 
-Keep one scrolling homepage, plain Tyler Rex branding, top-right desktop navigation, native anchors, and immediate active/focus feedback. Do not add gradients, shadows, rounded controls, colored left stripes, icon/arrow decorations, or hover animation. Read the full exclusion list rather than treating this summary as exhaustive.
+Implement the existing project locally: homepage Intro/About Me/What I'm Doing/Competitions and Projects/Write-ups/Contact, plus Portfolio, project detail, Write-ups, and Contact routes. Use plain Resume spelling. Present Tyler as a CS student exploring interests. Preserve verified content/statuses and deployment/package files. Tyler supplied an updated Resume on October 28; public/resume.pdf now uses those exact bytes. Hide editorial notes and null links/images.
 
-Redesign the existing src/ files and shared CSS/components. Preserve valid content and functionality. Do not create another project or hand-edit generated dist/ files. Run the production build, which regenerates dist/, and provide a local preview URL. Keep Git mutations and publication with Tyler unless explicitly authorized.
+Latest corrections: San Diego is the school location only, never Tyler's residence. Use seeking opportunities in San Jose and nearby areas without inventing a current home city. Currently learning is exactly Astro, Wireshark, Portainer. Projects and competitions share one panel. Feature SDSU Infrastructure Project and Segmented Cybersecurity Homelab, with the latter explicitly in design phase and all work planned/possible. Include two WRCCDC invitationals. Prefer real supplied images and official competition logos over generic clip art; retain only useful brand icons.
 
-The current request authorizes local content integration from src/data/portfolio-content.json and public/resume.pdf. Keep those supplied files intact, omit editorialNotes from rendered output, preserve planned/accepted/in-progress statuses, and omit null project links/images. Use a compact intro, readable flat sections, a working résumé download, native expandable project details, and copy-email/Discord buttons. Defer search and RSS until real writing exists.
+Two actual NCL write-up PDFs were supplied. Tyler confirmed he has no publication permission and wants them local-only; public copy should say they are written but cannot be shared. Root /writeups/ uploads and docs/content-drafts/ are Git-ignored. Private galleries/files are served only in development and must be absent from production routes/assets. Do not move their answers, PDFs, transcripts, or page images into public/ or Git.
 
-Tyler has selected GitHub Pages for the public portfolio and requested hosting setup. Expected graduation in May 2029 was confirmed on October 26, 2026. Inspect the actual repository state and help Tyler run Git mutations himself, then configure and verify GitHub Pages. The intended user-site repository is Trexed1/Trexed1.github.io. Check student domain options only after the github.io address works. Do not buy or register anything. At the end of that sequence, create a new dated/numbered handoff, append its link to the worklog, and stop for tonight.
+The contact form opens an encoded email draft; it does not send or store messages. Keep direct email/copy fallbacks. Name typing must retain accessible/no-JS text, reserve its width, finish once, and respect reduced motion including changes mid-effect.
+
+Run the production build and relevant route/resource/interaction checks for this redesign. Leave the local preview running for Tyler's manual review. Do not access Firefox, run Git mutations, publish, purchase, or register anything. The live Pages site still shows the previously pushed version until Tyler explicitly publishes the local changes. The old October 26 stop-for-tonight instruction is historical and does not block this new task.
 
 ## Browser access and local preview
 
@@ -51,6 +53,22 @@ Include: request/task; work or decision; changed paths (or “none”); checks a
 Use an append operation. Never replace, truncate, reorder, condense, or edit existing log text. Add a new timestamped correction if an earlier entry was wrong. Read the tail afterward to confirm the append succeeded. If logging is unavailable, tell Tyler; do not claim it happened. Do not log secrets or private client/competition data.
 
 This is an instruction to follow during work, not a background process or a close-event hook. An interrupted or closed chat cannot be assumed to run cleanup.
+
+##Additional Rules
+
+- Make the smallest change that completes my request.
+- Preserve the current design, layout, and content unless I explicitly
+  request a change to them.
+- Do not rebuild the site, refactor unrelated code, or add dependencies
+  for routine edits.
+- Read the relevant source files. Avoid generated dist files and
+  node_modules unless debugging specifically requires them.
+- Use focused patches. Do not paste entire files into chat.
+- Run checks appropriate to the change; avoid repeated full audits.
+- Keep final replies to: what changed, files changed, verification.
+  Aim for under 100 words unless I ask for a lesson.
+- Keep worklog additions short and timestamped. Preserve old entries.
+- Explain Git commands so I can run them myself.
 
 ## When Tyler says “wrap this session” (or asks for a handoff)
 

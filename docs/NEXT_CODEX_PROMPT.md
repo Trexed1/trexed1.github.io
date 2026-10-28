@@ -1,3 +1,5 @@
+Historical content-integration prompt from October 26. The current design is in docs/PROJECT_BRIEF.md and the October 28 docs/REDESIGN_PROMPT.md; older graphite/copper guidance below is superseded.
+
 Read AGENTS.md, docs/TONIGHT_PLAN.md, the latest handoff, and recent worklog entries. Inspect the existing website before editing.
 
 Tonight's goal is a useful, polished local portfolio with actual content. Use src/data/portfolio-content.json and public/resume.pdf from this packet. Integrate them into the existing Astro site without creating another project or replacing my history.

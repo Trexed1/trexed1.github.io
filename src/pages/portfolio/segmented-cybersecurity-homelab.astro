@@ -1,0 +1,23 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import portfolio from '../../data/portfolio-content.json';
+import { sitePath } from '../../lib/paths';
+const project = portfolio.projects.find((item) => item.id === 'segmented-homelab')!;
+---
+<SiteLayout title={project.name} description={project.summary}>
+  <div class="page-shell page-content">
+    <a class="text-link back-link" href={sitePath('portfolio/')}>Back to portfolio</a>
+    <header class="page-heading">
+      <p class="eyebrow">{project.kind} · {project.status}</p>
+      <h1>{project.name}</h1>
+      <p>{project.summary}</p>
+    </header>
+    <div class="article-body">
+      <section class="page-section"><h2>Design overview</h2><p>{project.overview}</p></section>
+      {project.sections?.map((section) => <section class="page-section"><h2>{section.title}</h2><p>{section.body}</p></section>)}
+      <section class="page-section"><h2>Planned technology</h2><p>{project.technologies.join(', ')}.</p></section>
+      <section class="page-section"><h2>Possible extensions</h2><p>{project.possibleExtensions?.join(', ')}.</p></section>
+      <section class="page-section"><h2>Design goals</h2><ul class="plain-list">{project.designGoals?.map((goal) => <li>{goal}</li>)}</ul></section>
+    </div>
+  </div>
+</SiteLayout>

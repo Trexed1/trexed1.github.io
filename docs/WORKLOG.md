@@ -92,3 +92,54 @@ This journal records concise outcomes, not full chat transcripts.
 - Request/decision: Tyler now wants the full explained Git/deployment sequence in one reply, superseding the prior one-command-per-turn preference. Tyler still runs commands in local VS Code.
 - Checks: main initialized, author name saved by Tyler, email unset, no commits/remotes; target GitHub repository lookup returned 404. Build not rerun for documentation-only edits.
 - Changed paths: AGENTS.md, docs/WORKLOG.md (append). Next: Tyler creates the empty public repository, commits locally, selects Pages Actions, and pushes; verify deployment before domain research and final handoff. No agent Git mutation or publication.
+
+## 2026-10-26T21:39:15-07:00: Repository creation clarification
+
+- Request/work: screenshot confirmed account-level Pages/domain settings; clarified that site Pages settings belong to the repository and a local commit does not create a GitHub repository.
+- Checks: Tyler's local commit 79925eb exists on main; no remote; target repository lookup returned 404. No build needed for guidance-only work.
+- Changed paths: docs/WORKLOG.md (append). Next: Tyler creates empty public Trexed1.github.io on GitHub, then configure repository Pages and connect/push. No agent Git mutations or browser access.
+
+## 2026-10-26T21:52:25-07:00: Public deployment verified and session wrap
+
+- Outcome: Tyler pushed commit 79925eb; GitHub Actions run 40451298921 succeeded. https://trexed1.github.io/ and /resume.pdf returned HTTP 200; live content/anchors/disclosures passed and résumé bytes matched the original.
+- Domain check: after verifying github.io, reviewed official Student Pack offers (.me, .TECH, selected Name.com first-year domains). Eligibility/renewals remain unchecked; no purchase or registration.
+- Changed paths: AGENTS.md, README.md, docs/PROJECT_BRIEF.md (live status), docs/WORKLOG.md (append), and new [2026-10-26_002.md](sessions/2026-10-26_002.md). Earlier handoff preserved. Final notes/handoff remain local and uncommitted; main tracks origin/main at deployed commit.
+- Checks/limits: remote workflow and public files verified, documentation diff check passed; browser appearance/keyboard/clipboard review remains with Tyler. No agent Git mutations or Firefox access.
+- Next: stop for tonight. Next chat reads the new handoff and actual Git state, reviews manual feedback, and helps Tyler save pending notes before optional future content/domain work.
+
+- Final verification: earlier history fingerprints and all required handoff sections passed.
+
+## 2026-10-27T11:01:07-07:00: Requested session wrap
+
+- Request/work: wrapped for today and exclusively created [2026-10-27_001.md](sessions/2026-10-27_001.md); preserved all earlier handoffs and pending edits.
+- Changed paths: docs/sessions/2026-10-27_001.md, docs/WORKLOG.md (append).
+- Checks: read-only Git inspection shows main tracking origin/main at 79925eb; final notes/handoffs remain uncommitted. No code changes, build rerun, public-site recheck, Git mutation, or Firefox access during this wrap.
+- Next: next chat reads the new handoff and actual Git state, then helps Tyler review/commit/push pending notes before further website work. Stop for today.
+
+## 2026-10-28T14:27:27-07:00: Blue/slate local redesign
+
+- Work: read START_HERE, redesign packet/images, current source/history; reconciled canonical/root briefs and instructions. Implemented tall one-time accessible name typing, short About/contact strip, current activities, one featured infrastructure lab, honest competitions/writing, and separate Portfolio/project/Write-ups/Contact routes with an email-draft form.
+- Paths: src/pages (five routes), src/components/{Header,ProjectRow,Intro,Icon,ContactLinks,CompetitionList,ContactForm}.astro, src/layouts/SiteLayout.astro, src/lib/paths.ts, src/styles/global.css, src/data/portfolio-content.json; AGENTS.md, PROJECT_BRIEF.md, docs/PROJECT_BRIEF.md, README.md, FIRST_PROMPT.md, docs/NEXT_CODEX_PROMPT.md; .gitignore and two unpublished docs/content-drafts outlines; docs/WORKLOG.md (append).
+- Checks: production build passed (five pages); built routes/links/assets/headings/labels/section order/Resume bytes and no public docs/editorial notes passed; all five preview routes and PDF HTTP 200. Built typing/reduced-motion, draft encoding/validation/failure, and clipboard logic passed terminal simulations. Text contrast 7.17:1 to 16.26:1; diff check passed. Resume, package/lockfile, deployment files, reference images, and earlier history fingerprints preserved; no dependencies added.
+- Limits/next: preview left at http://127.0.0.1:4321/ for Tyler. Actual 375/768/1440 viewport appearance, keyboard/navigation behavior, clipboard permissions, and email-app opening await manual review. Draft outlines are Git-ignored and outside public routes. No Firefox access, Git mutations, publication, purchases, or domain registration.
+
+## 2026-10-28T14:34:41-07:00: Preview and publication guidance
+
+- Request/work: explain local viewing without Git and the complete user-run publication sequence after approval.
+- Checks: local server listening at 127.0.0.1:4321; main tracks origin/main with the correct remote; redesign files/pending notes remain uncommitted and private article outlines are ignored. Build not rerun for guidance only.
+- Changed paths: docs/WORKLOG.md (append). Next: Tyler reviews preview, then reviews/builds/stages/commits/pushes if approved; push triggers Pages. No agent Git mutations, publication, or browser access.
+
+## 2026-10-28T15:37:55-07:00: Portfolio/content corrections and private write-up previews
+
+- Work/decision: corrected San Diego to school-only context; opportunities are San Jose/nearby without a residence claim. Learning is Astro, Wireshark, Portainer. Combined two projects and NCL/CCDC entries into one panel; added official logos, two CCDC invitationals, and the supplied design-phase homelab with planned/optional wording. Reduced generic clip art and used actual supplied PDF page images.
+- Privacy/Resume: Tyler confirmed no NCL publication permission and requested local-only documents. Two supplied write-ups have development-only galleries; public copy says written but not shareable. Root uploads/private material are Git-ignored and absent from production. Copied the supplied updated Resume unchanged; originals preserved.
+- Paths: portfolio/content/contact/intro/layout/style files; new PortfolioOverview, LocalWriteupList, local-writeups helper, homelab/write-up/local-asset routes; public/images/competitions/, public/resume.pdf; .gitignore, AGENTS.md, README.md, docs/PROJECT_BRIEF.md, docs/ASSET_SOURCES.md, ignored docs/content-drafts/ncl-materials/, docs/WORKLOG.md (append).
+- Checks: build passed (six public pages); location/learning/panel/status/link/logo/Resume-byte and private-output checks passed. Preview routes/resources HTTP 200; local galleries contain 24 full pages and private PDF/image bytes match inputs. Original inputs, history, package/lockfile and deployment fingerprints unchanged; diff check passed.
+- Next/limits: local preview remains http://127.0.0.1:4321/; private previews are under /writeups/. Actual browser/viewport review awaits Tyler. No Firefox, Git mutations, publication, purchases, or registration.
+
+## 2026-10-28T15:59:42-07:00: WRCCDC correction and session wrap
+
+- Request/work: changed competition/team copy to WRCCDC (two invitationals), official regional link/logo; updated current guidance and asset sources. Created [2026-10-28_001.md](sessions/2026-10-28_001.md) exclusively; earlier history preserved.
+- Paths: src/data/portfolio-content.json, public/images/competitions/wrccdc-logo.png, AGENTS.md, docs/PROJECT_BRIEF.md, docs/ASSET_SOURCES.md, docs/sessions/2026-10-28_001.md, docs/WORKLOG.md (append).
+- Checks: six-page production build and diff check passed; WRCCDC output and private-production exclusions passed; no private files tracked or files staged. Preview restarted at http://127.0.0.1:4322/ and HTTP 200 verified. Browser/viewport review remains manual.
+- Next: Tyler reviews, stages/inspects/commits/pushes using the explained sequence, then checks Pages Actions and public site/Resume. No agent Git mutations, publication, Firefox access, purchase, or registration. Stop for today.

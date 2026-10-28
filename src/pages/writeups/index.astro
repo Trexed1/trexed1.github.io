@@ -1,0 +1,17 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import portfolio from '../../data/portfolio-content.json';
+import LocalWriteupList from '../../components/LocalWriteupList.astro';
+---
+<SiteLayout title="Write-ups" description="Technical writing by Tyler Rex. Two NCL OSINT write-ups are written and kept private.">
+  <div class="page-shell page-content">
+    <header class="page-heading">
+      <p class="eyebrow">Notes and investigations</p>
+      <h1>Write-ups</h1>
+    </header>
+    <div class="writing-status">
+      <p>{portfolio.writingNotice}</p>
+    </div>
+    <LocalWriteupList />
+  </div>
+</SiteLayout>

@@ -1,0 +1,19 @@
+---
+import ProjectRow from './ProjectRow.astro';
+import CompetitionList from './CompetitionList.astro';
+import portfolio from '../data/portfolio-content.json';
+import { sitePath } from '../lib/paths';
+interface Props { homepage?: boolean; }
+const { homepage = false } = Astro.props;
+const Heading = homepage ? 'h3' : 'h2';
+const projects = portfolio.projects.filter((project) => project.featured);
+---
+<div class="panel portfolio-panel">
+  {homepage && <div class="section-heading"><h2 id="portfolio-heading">Competitions and Projects</h2><a class="text-link" href={sitePath('portfolio/')}>View portfolio</a></div>}
+  <Heading class="portfolio-group-heading">Projects</Heading>
+  <div class="portfolio-projects">
+    {projects.map((project) => <ProjectRow project={project} headingLevel={homepage ? 4 : 3} />)}
+  </div>
+  <Heading class="portfolio-group-heading competition-group-heading">Competitions</Heading>
+  <CompetitionList headingLevel={homepage ? 4 : 3} />
+</div>

@@ -1,0 +1,28 @@
+---
+import { getLocalWriteups } from '../lib/local-writeups';
+import { sitePath } from '../lib/paths';
+interface Props { headingLevel?: 2 | 3; }
+const { headingLevel = 2 } = Astro.props;
+const Heading = headingLevel === 2 ? 'h2' : 'h3';
+const Title = headingLevel === 2 ? 'h3' : 'h4';
+const entries = getLocalWriteups();
+---
+{entries.length > 0 && (
+  <div class="local-writeup-list">
+    <Heading>Local previews</Heading>
+    <p class="muted">These supplied documents are for local review only. They are excluded from Git and the production build.</p>
+    {entries.map((entry) => (
+      <article class="writeup-preview">
+        <a class="writeup-cover" href={sitePath('writeups/' + entry.slug + '/')} aria-label={'Read local preview: ' + entry.title}>
+          <img src={sitePath('local-writeup-assets/' + entry.slug + '/cover.png')} width="1600" height="900" alt={'First page of ' + entry.title} loading="lazy" />
+        </a>
+        <div>
+          <p class="entry-meta">{entry.event} · {entry.pages.length} pages · Private</p>
+          <Title>{entry.title}</Title>
+          <p>{entry.description}</p>
+          <a class="text-link" href={sitePath('writeups/' + entry.slug + '/')}>Read local preview</a>
+        </div>
+      </article>
+    ))}
+  </div>
+)}

@@ -1,0 +1,28 @@
+---
+import portfolio from '../data/portfolio-content.json';
+import Icon from './Icon.astro';
+import CopyButton from './CopyButton.astro';
+import { sitePath } from '../lib/paths';
+---
+<div class="contact-links">
+  <dl class="contact-facts">
+    <div>
+      <dt>Email</dt>
+      <dd><a href={'mailto:' + portfolio.contact.email}>{portfolio.contact.email}</a><CopyButton value={portfolio.contact.email} label="Copy email" /></dd>
+    </div>
+    <div>
+      <dt>Phone</dt>
+      <dd><a href={portfolio.contact.phoneHref}>{portfolio.contact.phoneDisplay}</a></dd>
+    </div>
+    <div>
+      <dt>Opportunities</dt>
+      <dd>{portfolio.preferredWorkArea}</dd>
+    </div>
+  </dl>
+  <ul class="resource-links" aria-label="Contact and resources">
+    <li><a href={sitePath(portfolio.resume.file)} download>Resume</a></li>
+    <li><a href={portfolio.contact.github}><Icon name="github" />GitHub</a></li>
+    <li><a href={portfolio.contact.linkedin}><Icon name="linkedin" />LinkedIn</a></li>
+    <li class="discord-control"><span><Icon name="discord" />{portfolio.contact.discord}</span><CopyButton value={portfolio.contact.discord} label="Copy Discord" /></li>
+  </ul>
+</div>

@@ -1,0 +1,36 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { getLocalWriteups } from '../../lib/local-writeups';
+import { sitePath } from '../../lib/paths';
+export function getStaticPaths() {
+  return getLocalWriteups().map((writeup) => ({ params: { slug: writeup.slug }, props: { writeup } }));
+}
+const { writeup } = Astro.props;
+const assetBase = sitePath('local-writeup-assets/' + writeup.slug + '/');
+---
+<SiteLayout title={writeup.title} description={writeup.description} noindex>
+  <div class="page-shell page-content">
+    <a class="text-link back-link" href={sitePath('writeups/')}>Back to write-ups</a>
+    <header class="page-heading">
+      <p class="eyebrow">Local-only document preview</p>
+      <h1>{writeup.title}</h1>
+      <p>{writeup.description}</p>
+      <p class="entry-meta">{writeup.event} · {writeup.pages.length} pages</p>
+      <p class="private-notice">Kept private at Tyler's request. This page and its files are not included in the production build.</p>
+      <a class="button button-secondary" href={assetBase + 'document.pdf'} download={writeup.slug + '.pdf'}>Download supplied PDF</a>
+    </header>
+    <div class="writeup-pages">
+      {writeup.pages.map((page, index) => (
+        <section class="writeup-page" aria-label={'Page ' + (index + 1)}>
+          <figure>
+            <a href={assetBase + page.file} aria-label={'Open full-size page ' + (index + 1)}>
+              <img src={assetBase + page.file} width="3840" height="2160" alt={'Page ' + (index + 1) + ' of ' + writeup.title} loading={index === 0 ? 'eager' : 'lazy'} />
+            </a>
+            <figcaption>Page {index + 1} of {writeup.pages.length}. Select the image to open it full-size.</figcaption>
+          </figure>
+          <details class="page-transcript"><summary>Read page text</summary><pre>{page.text}</pre></details>
+        </section>
+      ))}
+    </div>
+  </div>
+</SiteLayout>

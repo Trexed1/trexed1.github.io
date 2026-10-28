@@ -1,0 +1,21 @@
+---
+import portfolio from '../data/portfolio-content.json';
+import { sitePath } from '../lib/paths';
+interface Props { headingLevel?: 3 | 4; }
+const { headingLevel = 3 } = Astro.props;
+const Heading = headingLevel === 4 ? 'h4' : 'h3';
+---
+<div class="competition-list">
+  {portfolio.competitions.map((entry) => (
+    <article class="competition-entry">
+      <a class="competition-logo" href={entry.website} aria-label={entry.title + ' official website'}>
+        <img src={sitePath(entry.logo)} width={entry.logoWidth} height={entry.logoHeight} alt={entry.title + ' logo'} loading="lazy" />
+      </a>
+      <div>
+        <Heading>{entry.title}</Heading>
+        <p class="entry-meta">{entry.participation}</p>
+        <p>{entry.description}</p>
+      </div>
+    </article>
+  ))}
+</div>

@@ -1,8 +1,8 @@
 # Tyler Rex — portfolio
 
-This folder now contains a first local Astro homepage and the planning/continuity notes that guided it. The page is a draft; missing personal details are labeled rather than filled in with guesses. Nothing has been published.
+This folder contains Tyler Rex's Astro portfolio and its project notes. The public site is https://trexed1.github.io/. The public homepage and résumé were verified on October 26, 2026.
 
-The current visual direction is graphite, warm gray, and copper, with Georgia headings and Arial body text. See docs/PROJECT_BRIEF.md for the full requirements and 30 exclusions. Older sage/green choices in historical handoffs are superseded. Content comes from src/data/portfolio-content.json, with the supplied résumé at public/resume.pdf. GitHub Pages setup is in progress; a successful public deployment has not yet been verified.
+The latest local direction is dark blue/slate with light blue accents and Arial system fonts. It includes a tall intro, labeled icons, and separate Portfolio, Write-ups, Contact, and infrastructure project pages alongside the scrolling homepage. See docs/PROJECT_BRIEF.md and docs/REDESIGN_BRIEF.md. This redesign is local until Tyler approves and publishes it; the live URL still serves the previously pushed version.
 
 ## Run the site locally
 
@@ -28,11 +28,11 @@ npm run preview
 
 ## GitHub Pages
 
-The intended repository is Trexed1/Trexed1.github.io, with target URL https://trexed1.github.io/. That URL is a deployment target, not a verified live site yet.
+The repository is https://github.com/Trexed1/trexed1.github.io and the live site is https://trexed1.github.io/. The initial deployment succeeded for commit 79925eb.
 
 The local configuration uses that site URL. No repository subpath is needed for this user-site repository. The workflow in .github/workflows/deploy.yml uses Node 24 and the npm lockfile to build and deploy on pushes to main.
 
-Create the matching empty public repository on GitHub, then set its Settings > Pages > Source to GitHub Actions. Tyler runs the commit, remote setup, and push commands himself. Once pushed, verify the workflow succeeds and that both the public homepage and resume.pdf respond successfully.
+GitHub Actions deployment is working. Tyler runs future commit and push commands himself; a push to main triggers the deployment workflow. After future updates, verify the workflow succeeds and both the public homepage and resume.pdf respond successfully. Do not initialize Git or create the repository again.
 
 Reference: https://docs.astro.build/en/guides/deploy/github/
 
@@ -65,7 +65,9 @@ The website source is in `src/`, and the project commands are in `package.json`.
 
 Edit personal content in src/data/portfolio-content.json. Keep status wording such as planned, accepted, and in progress accurate. The editorialNotes object stays internal and is never rendered. Null project links/images are omitted. Replace public/resume.pdf only when supplying an updated résumé; the page uses a base-aware download link.
 
-Project details use native expandable controls. Email and Discord have copy buttons when the browser supports clipboard access; the contact text remains readable without JavaScript. No articles, search, or RSS have been added.
+Projects and competitions share one panel with official event logos. The infrastructure project and design-phase homelab have separate detail routes. Email and Discord retain clipboard controls; the contact form opens an email draft without sending or storing messages. San Diego is school context only; opportunities are sought in San Jose and nearby areas.
+
+Two supplied NCL write-ups are written but cannot be shared publicly. Their originals under root writeups/ and local gallery material under docs/content-drafts/ are Git-ignored. Development-only write-up and asset routes serve local previews; production builds omit all private pages/files. No search or RSS has been added. public/resume.pdf is the exact updated Resume supplied October 28.
 
 ## Daily use
 

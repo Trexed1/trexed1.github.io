@@ -1,45 +1,41 @@
-<header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="#top" aria-label="Tyler Rex, back to top">Tyler Rex</a>
-
+---
+import { sitePath } from '../lib/paths';
+const home = sitePath();
+const isHome = Astro.url.pathname === home;
+const items = [
+  { label: 'About', key: 'about', href: home + '#about' },
+  { label: 'Portfolio', key: 'portfolio', href: sitePath('portfolio/') },
+  { label: 'Write-ups', key: 'writeups', href: sitePath('writeups/') },
+  { label: 'Contact', key: 'contact', href: sitePath('contact/') },
+];
+---
+<header class="site-header" data-home={isHome ? 'true' : 'false'}>
+  <div class="page-shell header-inner">
+    <a class="brand" href={home + '#top'} aria-label="Tyler Rex, home">Tyler Rex</a>
     <nav aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#writing">Writing</a>
-      <a href="#contact">Contact</a>
+      {items.map((item) => (
+        <a href={item.href} data-section={item.key} aria-current={!isHome && Astro.url.pathname.startsWith(sitePath(item.key + '/')) ? 'page' : undefined}>{item.label}</a>
+      ))}
     </nav>
   </div>
 </header>
-
 <script>
-  const links = [...document.querySelectorAll<HTMLAnchorElement>('.site-header nav a')];
   const header = document.querySelector<HTMLElement>('.site-header');
-  const sections = links
-    .map((link) => document.querySelector<HTMLElement>(link.hash))
-    .filter((section): section is HTMLElement => section !== null);
-
-  function markCurrent(id: string | null) {
-    for (const link of links) {
-      if (link.hash === `#${id}`) {
-        link.setAttribute('aria-current', 'location');
-      } else {
-        link.removeAttribute('aria-current');
+  if (header?.dataset.home === 'true') {
+    const links = [...header.querySelectorAll<HTMLAnchorElement>('nav a[data-section]')];
+    const sections = [...document.querySelectorAll<HTMLElement>('.home-section[id]')];
+    function updateCurrent() {
+      const readingLine = (header?.offsetHeight ?? 0) + 40;
+      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+      const current = atBottom ? sections.at(-1) : [...sections].reverse().find((section) => section.getBoundingClientRect().top <= readingLine);
+      const key = current?.id === 'now' ? 'about' : current?.id;
+      for (const link of links) {
+        if (link.dataset.section === key) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
       }
     }
+    window.addEventListener('scroll', updateCurrent, { passive: true });
+    window.addEventListener('resize', updateCurrent);
+    updateCurrent();
   }
-
-  function updateCurrent() {
-    const readingLine = (header?.offsetHeight ?? 0) + 64;
-    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
-    const current = atBottom
-      ? sections.at(-1)
-      : [...sections].reverse().find((section) => section.getBoundingClientRect().top <= readingLine);
-
-    markCurrent(current?.id ?? null);
-  }
-
-  window.addEventListener('scroll', updateCurrent, { passive: true });
-  window.addEventListener('resize', updateCurrent);
-  updateCurrent();
 </script>
