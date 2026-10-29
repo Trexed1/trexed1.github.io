@@ -1,11 +1,11 @@
 :root {
-  --color-bg: #0e1520;
-  --color-surface: #151f2e;
-  --color-raised: #1b293a;
-  --color-text: #edf2f7;
-  --color-muted: #a9b6c8;
-  --color-accent: #8cbce8;
-  --color-divider: #33445a;
+  --color-bg: #181818;
+  --color-surface: #202020;
+  --color-raised: #2a2a2a;
+  --color-text: #f2f2f2;
+  --color-muted: #b8b8b8;
+  --color-accent: #dedede;
+  --color-divider: #737373;
   --header-height: 5rem;
   color-scheme: dark;
   font-family: Arial, Helvetica, sans-serif;
@@ -109,7 +109,7 @@ p, li, dd { overflow-wrap: break-word; }
 .competition-entry + .competition-entry { border-top: 1px solid var(--color-divider); }
 .competition-entry h3, .competition-entry h4 { margin-bottom: .5rem; font-size: 1.25rem; }
 .competition-entry p:last-child { margin-bottom: 0; }
-.competition-logo { min-height: 8rem; display: flex; justify-content: center; align-items: center; padding: 1rem; background: #e8edf2; border-radius: 4px; }
+.competition-logo { min-height: 8rem; display: flex; justify-content: center; align-items: center; padding: 1rem; background: #e8e8e8; border-radius: 4px; }
 .competition-logo img { display: block; width: auto; height: auto; max-width: 100%; max-height: 7rem; }
 .section-copy > :last-child { margin-bottom: 0; }
 

@@ -22,7 +22,7 @@ Use the architecture and design in the project brief. Favor plain CSS, semantic 
 
 ## Current design and content milestone
 
-docs/PROJECT_BRIEF.md is canonical. The October 28, 2026 redesign in docs/REDESIGN_BRIEF.md supersedes conflicting older copper/Georgia, one-page-only, icon, rounding, and typing restrictions. Use dark blue/slate/light blue (#0E1520, #151F2E, #1B293A, #EDF2F7, #A9B6C8, #8CBCE8, #33445A) with Arial/Helvetica system fonts. Useful labeled local SVG icons, one brief accessible name-typing effect, 8px controls, and 12px broad panels are authorized. Keep retained exclusions in the current brief.
+docs/PROJECT_BRIEF.md is canonical. The October 28, 2026 redesign in docs/REDESIGN_BRIEF.md supersedes conflicting older copper/Georgia, one-page-only, icon, rounding, and typing restrictions. The October 29 palette update supersedes its colors: use charcoal/neutral gray/off-white (#181818, #202020, #2A2A2A, #F2F2F2, #B8B8B8, #DEDEDE, #737373); no green, blue, or brown theme colors. Preserve original logo/document image colors. Continue with Arial/Helvetica system fonts. Useful labeled local SVG icons, one brief accessible name-typing effect, 8px controls, and 12px broad panels are authorized. Keep retained exclusions in the current brief.
 
 Implement the existing project locally: homepage Intro/About Me/What I'm Doing/Competitions and Projects/Write-ups/Contact, plus Portfolio, project detail, Write-ups, and Contact routes. Use plain Resume spelling. Present Tyler as a CS student exploring interests. Preserve verified content/statuses and deployment/package files. Tyler supplied an updated Resume on October 28; public/resume.pdf now uses those exact bytes. Hide editorial notes and null links/images.
 

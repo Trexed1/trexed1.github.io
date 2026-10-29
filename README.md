@@ -2,7 +2,7 @@
 
 This folder contains Tyler Rex's Astro portfolio and its project notes. The public site is https://trexed1.github.io/. The public homepage and résumé were verified on October 26, 2026.
 
-The latest local direction is dark blue/slate with light blue accents and Arial system fonts. It includes a tall intro, labeled icons, and separate Portfolio, Write-ups, Contact, and infrastructure project pages alongside the scrolling homepage. See docs/PROJECT_BRIEF.md and docs/REDESIGN_BRIEF.md. This redesign is local until Tyler approves and publishes it; the live URL still serves the previously pushed version.
+The latest local direction is charcoal, neutral gray, and off-white (October 29 palette update) and Arial system fonts. It includes a tall intro, labeled icons, and separate Portfolio, Write-ups, Contact, and infrastructure project pages alongside the scrolling homepage. See docs/PROJECT_BRIEF.md and docs/REDESIGN_BRIEF.md. This redesign is local until Tyler approves and publishes it; the live URL still serves the previously pushed version.
 
 ## Run the site locally
 

@@ -1,7 +1,7 @@
 # Tyler Rex: current website brief
 
 ## Current direction and authority
-The October 28, 2026 redesign is the latest authorized direction. This file is canonical; docs/REDESIGN_BRIEF.md is its detailed implementation packet, docs/REDESIGN_PROMPT.md supplies the workflow, and docs/reference-images/ contains the four supplied visual references. Root PROJECT_BRIEF.md points here. This supersedes conflicting copper/Georgia, one-page-only, icon, rounding, and typing restrictions from earlier prompts. Worklogs and dated handoffs remain immutable.
+The October 29, 2026 neutral palette supersedes the October 28 blue/slate colors; the rest of that redesign remains in effect. This file is canonical; docs/REDESIGN_BRIEF.md is its detailed implementation packet, docs/REDESIGN_PROMPT.md supplies the workflow, and docs/reference-images/ contains the four supplied visual references. Root PROJECT_BRIEF.md points here. This supersedes conflicting copper/Georgia, one-page-only, icon, rounding, and typing restrictions from earlier prompts. Worklogs and dated handoffs remain immutable.
 
 ## Purpose and facts
 Introduce Tyler Rex as a Computer Science student at San Diego State University exploring software, systems, and cybersecurity. Do not assign a specialty, professional seniority, or another person's identity.
@@ -11,20 +11,23 @@ The supplied contact fields are authorized: email, phone, GitHub, LinkedIn, and 
 Never render editorialNotes. Omit null project URLs/images. No invented projects, achievements, awards, scores, screenshots, articles, challenge titles, solutions, or completed certifications.
 
 ## Visual system
-Use solid dark blue/slate surfaces, local Arial/Helvetica sans-serif headings/body, and these shared tokens:
-- Background #0E1520
-- Surface #151F2E
-- Raised surface #1B293A
-- Text #EDF2F7
-- Muted text #A9B6C8
-- Accent #8CBCE8
-- Divider #33445A
+Use solid charcoal and neutral-gray surfaces, local Arial/Helvetica sans-serif headings/body, and these shared tokens:
+- Background #181818
+- Surface #202020
+- Raised surface #2A2A2A
+- Text #F2F2F2
+- Muted text #B8B8B8
+- Accent #DEDEDE
+- Divider #737373
+- Logo backing #E8E8E8
+
+The theme is achromatic: no green, blue, or brown casts. Official logos and supplied document images retain their original colors. This palette replaces earlier color specifications in the redesign packet.
 
 Use background-colored text on filled accent buttons and visible keyboard focus. Keep body around 16-18px, section headings around 32-48px, and max width near 70rem. The first-screen name is large and bold, approximately clamp(3.5rem, 9vw, 8rem), adjusted for short screens.
 The intro occupies approximately the first viewport below navigation, using svh with a fallback and natural growth. Controls must not be clipped. Later sections are denser and readable. Use a restrained number of broad section panels, approximately 12px corners, and approximately 8px control corners.
 Prefer real supplied document images and official competition logos over generic clip art. Remove generic project/contact pictograms; retain useful GitHub, LinkedIn, and Discord brand icons with text. Preserve original logo colors/proportions and supplied document images. No dependency or runtime icon bundle.
 
-Retain these exclusions: gradients, glass/blur, shadows, pure white backgrounds, rainbow colors, copper/green/neon accents, pastel-themed surfaces, purple/black schemes, three-feature-card sections, bento grids, decorative left stripes, emojis, sparkles, animated arrows, particles/dots/network fields, radial orbs, fake terminal chrome, testimonials, pricing, skeleton loaders, marketing slogans, and Inter/Geist/Space Grotesk. No em dashes in visible copy. Ordinary hover feedback is immediate without movement or animated transitions. No analytics, cookie banners, or unused policy boilerplate.
+Retain these exclusions: gradients, glass/blur, shadows, pure white backgrounds, rainbow colors, green/blue/brown/copper/neon theme colors, pastel-themed surfaces, purple/black schemes, three-feature-card sections, bento grids, decorative left stripes, emojis, sparkles, animated arrows, particles/dots/network fields, radial orbs, fake terminal chrome, testimonials, pricing, skeleton loaders, marketing slogans, and Inter/Geist/Space Grotesk. No em dashes in visible copy. Ordinary hover feedback is immediate without movement or animated transitions. No analytics, cookie banners, or unused policy boilerplate.
 
 ## Routes and navigation
 Homepage section order and IDs:

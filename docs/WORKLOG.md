@@ -143,3 +143,17 @@ This journal records concise outcomes, not full chat transcripts.
 - Paths: src/data/portfolio-content.json, public/images/competitions/wrccdc-logo.png, AGENTS.md, docs/PROJECT_BRIEF.md, docs/ASSET_SOURCES.md, docs/sessions/2026-10-28_001.md, docs/WORKLOG.md (append).
 - Checks: six-page production build and diff check passed; WRCCDC output and private-production exclusions passed; no private files tracked or files staged. Preview restarted at http://127.0.0.1:4322/ and HTTP 200 verified. Browser/viewport review remains manual.
 - Next: Tyler reviews, stages/inspects/commits/pushes using the explained sequence, then checks Pages Actions and public site/Resume. No agent Git mutations, publication, Firefox access, purchase, or registration. Stop for today.
+
+## 2026-10-29T11:37:28-07:00: Neutral palette update
+
+- Request/work: replaced blue/slate with charcoal, neutral gray, and off-white across the shared theme; no green/blue/brown theme colors. Preserved layout/content, original logo/document colors, and existing functionality. Updated current guidance.
+- Paths: src/styles/global.css, AGENTS.md, README.md, docs/PROJECT_BRIEF.md, docs/WORKLOG.md (append).
+- Checks: six-page production build and diff check passed; CSS comparison confirms only color values changed; all theme hex colors have equal RGB channels. Minimum text contrast 7.24:1; control borders 3.03:1. Preview startup reports http://127.0.0.1:4323/ after sandbox start failed; HTTP not separately checked.
+- Next: Tyler reviews desktop/mobile appearance manually. No Firefox access, Git mutations, dependencies, or publication.
+
+## 2026-10-29T11:43:46-07:00: TR tab icon and sharing preview
+
+- Request/work: added neutral TR SVG/ICO tab icons, Apple touch icon, and 1200x630 TR/Tyler Rex sharing image. Shared layout supplies Open Graph/Twitter metadata on public pages; private noindex pages omit sharing metadata. Uses existing configured site origin for absolute image URL; custom domain in screenshot could not be fetched via web tool.
+- Paths: src/layouts/SiteLayout.astro, public/favicon.svg, public/favicon.ico, public/apple-touch-icon.png, public/images/tyler-rex-share.png, docs/WORKLOG.md (append). Existing palette edits preserved.
+- Checks: six-page build, all-page metadata/icon-target assertions, image dimensions, private-route exclusion, and diff check passed; sharing image inspected locally. Actual browser/tab and messaging previews await deployment/manual review; old previews may be cached.
+- Next: Tyler reviews local preview and runs status/diff/build/add/review/commit/push; Pages workflow publishes. No agent Git mutations, publication, or Firefox access.
